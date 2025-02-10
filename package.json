@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/digitalcredentials/data-integrity"
   },
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "type": "module",
   "exports": "./lib/index.js",
   "files": [
