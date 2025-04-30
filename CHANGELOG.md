@@ -1,4 +1,4 @@
-# @digitalbazaar/data-integrity Changelog
+# @digitalcredentials/data-integrity Changelog
 
 ## 2.6.0 - 2025-04-30
 
