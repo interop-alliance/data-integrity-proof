@@ -1,13 +1,13 @@
 {
   "name": "@digitalcredentials/data-integrity",
-  "version": "2.5.1-0",
+  "version": "2.6.0",
   "description": "Data Integrity Proof library for use with jsonld-signatures.",
   "homepage": "https://github.com/digitalcredentials/data-integrity",
   "repository": {
     "type": "git",
     "url": "https://github.com/digitalcredentials/data-integrity"
   },
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "type": "module",
   "exports": "./lib/index.js",
   "files": [
@@ -15,12 +15,20 @@
   ],
   "browser": {
     "crypto": false,
-    "./lib/sha256digest.js": "./lib/sha256digest-browser.js"
+    "./lib/sha256digest.js": "./lib/sha256digest-browser.js",
+    "./lib/sha256digest-reactnative.js": false,
+    "fast-text-encoding": false
+  },
+  "react-native": {
+    "crypto": false,
+    "./lib/sha256digest.js": "./lib/sha256digest-reactnative.js",
+    "./lib/sha256digest-browser.js": false
   },
   "dependencies": {
     "@digitalcredentials/jsonld-signatures": "^12.0.1",
     "base58-universal": "^2.0.0",
-    "base64url-universal": "^2.0.0"
+    "base64url-universal": "^2.0.0",
+    "fast-text-encoding": "^1.0.6"
   },
   "devDependencies": {
     "@digitalbazaar/data-integrity-context": "^2.0.0",

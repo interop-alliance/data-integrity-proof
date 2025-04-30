@@ -1,4 +1,9 @@
-# @digitalbazaar/data-integrity Changelog
+# @digitalcredentials/data-integrity Changelog
+
+## 2.6.0 - 2025-04-30
+
+### Added
+- adds support for react native
 
 ## 2.5.0 - 2024-09-06
 

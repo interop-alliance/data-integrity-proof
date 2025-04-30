@@ -1,10 +1,11 @@
-# Data Integrity library _(@digitalbazaar/data-integrity)_
+# Data Integrity library _(@digitalcredentials/data-integrity)_
 
-[![Build status](https://img.shields.io/github/actions/workflow/status/digitalbazaar/data-integrity/main.yml)](https://github.com/digitalbazaar/data-integrity/actions?query=workflow%3A%22Node.js+CI%22)
-[![Coverage status](https://img.shields.io/codecov/c/github/digitalbazaar/data-integrity)](https://codecov.io/gh/digitalbazaar/data-integrity)
-[![NPM Version](https://img.shields.io/npm/v/@digitalbazaar/data-integrity.svg)](https://npm.im/@digitalbazaar/data-integrity)
+[![Build status](https://img.shields.io/github/actions/workflow/status/digitalcredentials/data-integrity/main.yml)](https://github.com/digitalcredentials/data-integrity/actions?query=workflow%3A%22Node.js+CI%22)
+[![NPM Version](https://img.shields.io/npm/v/@digitalcredentials/data-integrity.svg)](https://npm.im/@digitalcredentials/data-integrity)
 
 > DataIntegrity library for use with cryptosuites and jsonld-signatures.
+
+NOTE this is a fork of @digitalbazaar/data-integrity that adds support for react native by adding a react-native override in package.json that shims in a react native compatible sha256digest library. It also replaces @digitalbazaar dependencies with @digitalcredential forks that in turn support react native.
 
 ## Table of Contents
 
@@ -13,12 +14,11 @@
 - [Install](#install)
 - [Usage](#usage)
 - [Contribute](#contribute)
-- [Commercial Support](#commercial-support)
 - [License](#license)
 
 ## Background
 
-For use with https://github.com/digitalbazaar/jsonld-signatures v11.0 and above.
+For use with https://github.com/digitalcredentials/jsonld-signatures v11.0 and above.
 
 See also related specs:
 
@@ -52,11 +52,11 @@ The following code snippet provides a complete example of digitally signing
 a verifiable credential using this library:
 
 ```javascript
-import * as Ed25519Multikey from '@digitalbazaar/ed25519-multikey';
-import {DataIntegrityProof} from '@digitalbazaar/data-integrity';
+import * as Ed25519Multikey from '@digitalcredentials/ed25519-multikey';
+import {DataIntegrityProof} from '@digitalcredentials/data-integrity';
 import {cryptosuite as eddsa2022CryptoSuite} from
-  '@digitalbazaar/eddsa-2022-cryptosuite';
-import jsigs from 'jsonld-signatures';
+  '@digitalcredentials/eddsa-2022-cryptosuite';
+import jsigs from '@digitalcredentials/jsonld-signatures';
 const {purposes: {AssertionProofPurpose}} = jsigs;
 
 
@@ -157,18 +157,11 @@ https://w3id.org/security/data-integrity/v1) to be used.
 
 ## Contribute
 
-See [the contribute file](https://github.com/digitalbazaar/bedrock/blob/master/CONTRIBUTING.md)!
-
 PRs accepted.
 
 If editing the Readme, please conform to the
 [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
-## Commercial Support
-
-Commercial support for this library is available upon request from
-Digital Bazaar: support@digitalbazaar.com
-
 ## License
 
-[New BSD License (3-clause)](LICENSE) © 2022 Digital Bazaar
+[MIT License](LICENSE.md) © 2025 Digital Credentials Consortium.
