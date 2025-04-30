@@ -1,6 +1,6 @@
 # @digitalbazaar/data-integrity Changelog
 
-## 2.6.0 - TBD
+## 2.6.0 - 2025-04-30
 
 ### Added
 - adds support for react native
