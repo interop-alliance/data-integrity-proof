@@ -1,6 +1,6 @@
 # @interop/data-integrity-proof Changelog
 
-## 3.1.0 - TBD
+## 3.1.0 - 2026-06-01
 
 ### Changed
 - Make `Cryptosuite.name` optional (and `DataIntegrityProof.cryptosuite`
