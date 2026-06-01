@@ -1,6 +1,6 @@
 # @interop/data-integrity-proof Changelog
 
-## Unreleased
+## 3.0.0 - 2026-06-01
 
 ### Changed
 - **BREAKING**: Forked from `@digitalcredentials/data-integrity` and renamed to
