@@ -1,4 +1,23 @@
-# @digitalcredentials/data-integrity Changelog
+# @interop/data-integrity-proof Changelog
+
+## Unreleased
+
+### Changed
+- **BREAKING**: Forked from `@digitalcredentials/data-integrity` and renamed to
+  `@interop/data-integrity-proof`.
+- **BREAKING**: Rewritten in TypeScript; ships ESM only and builds to `dist/`
+  via `tsc`. Removed the CommonJS/Karma/Mocha toolchain.
+- **BREAKING**: Minimum Node.js version is now 24.
+- Switched the package manager to pnpm and the test stack to Vitest (Node) plus
+  Playwright (browser).
+- Replaced `base58-universal` / `base64url-universal` with `@scure/base`.
+- Replaced the React Native SHA-256 implementation (`expo-crypto` +
+  `fast-text-encoding`) with `@noble/hashes`; the browser variant continues to
+  use WebCrypto and the Node variant continues to use `node:crypto`.
+- Swapped dependencies to the `@interop/` forks: `@interop/jsonld-signatures`,
+  `@interop/ed25519-verification-key`, `@interop/ed25519-signature`, and
+  `@interop/security-document-loader`. Type definitions are reused from
+  `@interop/data-integrity-core`.
 
 ## 2.6.0 - 2025-04-30
 
