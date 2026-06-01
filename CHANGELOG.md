@@ -1,5 +1,18 @@
 # @interop/data-integrity-proof Changelog
 
+## 3.1.0 - TBD
+
+### Changed
+- Make `Cryptosuite.name` optional (and `DataIntegrityProof.cryptosuite`
+  `string | undefined`). A cryptosuite may omit `name` so the emitted proof
+  carries no `cryptosuite` field -- e.g. the legacy `Ed25519Signature2020`
+  relabeling, where `matchProof` compares `undefined === undefined`.
+- Type proof parameters/returns with `IProofDescription` from
+  `@interop/data-integrity-core` (was `any`), except `verifyProof`'s `proof`
+  param, kept wide (`any`) to remain assignable to the jsigs `LinkedDataProof`
+  base (whose `verifyProof` declares `proof: object`).
+- Require `@interop/data-integrity-core` `^6.1.0`.
+
 ## 3.0.0 - 2026-06-01
 
 ### Changed
