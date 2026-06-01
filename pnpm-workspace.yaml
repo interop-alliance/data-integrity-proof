@@ -1,0 +1,4 @@
+minimumReleaseAgeExclude:
+  - '@interop/data-integrity-core@6.0.2'
+  - '@interop/security-document-loader@9.0.2'
+  - '@interop/ed25519-verification-key@7.0.0'
