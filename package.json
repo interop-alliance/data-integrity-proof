@@ -1,6 +1,6 @@
 {
   "name": "@interop/data-integrity-proof",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Data Integrity Proof library for use with jsonld-signatures.",
   "type": "module",
   "scripts": {
@@ -43,7 +43,7 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "dependencies": {
-    "@interop/data-integrity-core": "^6.0.2",
+    "@interop/data-integrity-core": "^6.1.0",
     "@interop/jsonld-signatures": "^11.6.2",
     "@noble/hashes": "^2.2.0",
     "@scure/base": "^2.2.0"

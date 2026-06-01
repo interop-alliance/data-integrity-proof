@@ -6,7 +6,8 @@ import type {
   ISigner,
   IVerifier,
   IVerificationResult,
-  IVerificationMethod
+  IVerificationMethod,
+  IProofDescription
 } from '@interop/data-integrity-core'
 import type { IDocumentLoader } from '@interop/data-integrity-core/loader'
 import jsigs from '@interop/jsonld-signatures'
@@ -36,7 +37,11 @@ export interface Cryptosuite {
   createVerifier: (options: {
     verificationMethod: IVerificationMethod
   }) => Promise<IVerifier>
-  name: string
+  // Optional: a cryptosuite may omit `name` so the proof carries no
+  // `cryptosuite` field (e.g. the legacy Ed25519Signature2020 relabeling,
+  // where `this.cryptosuite` stays undefined and `matchProof` compares
+  // undefined === undefined).
+  name?: string
   requiredAlgorithm: string | string[]
   derive?: (options: any) => Promise<any>
   createProofValue?: (options: any) => Promise<string>
@@ -64,12 +69,12 @@ export class DataIntegrityProof extends LinkedDataProof {
   public contextUrl: string
   public canonize: Cryptosuite['canonize']
   public createVerifier: Cryptosuite['createVerifier']
-  public cryptosuite: string
+  public cryptosuite?: string
   public requiredAlgorithm: string | string[]
   public verificationMethod?: string
   public signer?: ISigner
   public date?: Date | null
-  public proof?: any
+  public proof?: IProofDescription
 
   private readonly _cryptosuite: Cryptosuite
   private _hashCache?: { document: any; hash: Promise<Uint8Array> }
@@ -156,11 +161,11 @@ export class DataIntegrityProof extends LinkedDataProof {
     proof
   }: {
     verifyData: Uint8Array
-    proof: any
+    proof: IProofDescription
     document?: any
     proofSet?: any[]
     documentLoader?: IDocumentLoader
-  }): Promise<any> {
+  }): Promise<IProofDescription> {
     if (!(this.signer && typeof this.signer.sign === 'function')) {
       throw new Error('A signer API has not been specified.')
     }
@@ -190,7 +195,7 @@ export class DataIntegrityProof extends LinkedDataProof {
   }: {
     verifyData: Uint8Array
     verificationMethod: IVerificationMethod
-    proof: any
+    proof: IProofDescription
   }): Promise<boolean> {
     const verifier = await this.createVerifier({ verificationMethod })
     const isSupportedAlgorithm = Array.isArray(this.requiredAlgorithm)
@@ -250,9 +255,9 @@ export class DataIntegrityProof extends LinkedDataProof {
     purpose: any
     proofSet?: any[]
     documentLoader: IDocumentLoader
-  }): Promise<any> {
+  }): Promise<IProofDescription> {
     // build proof (currently known as `signature options` in spec)
-    let proof: any
+    let proof: IProofDescription
     if (this.proof) {
       // shallow copy
       proof = { ...this.proof }
@@ -389,12 +394,12 @@ export class DataIntegrityProof extends LinkedDataProof {
   async updateProof({
     proof
   }: {
-    proof: any
+    proof: IProofDescription
     document?: any
     purpose?: any
     proofSet?: any[]
     documentLoader?: IDocumentLoader
-  }): Promise<any> {
+  }): Promise<IProofDescription> {
     return proof
   }
 
@@ -413,6 +418,10 @@ export class DataIntegrityProof extends LinkedDataProof {
     document,
     documentLoader
   }: {
+    // Widened to `any` to remain assignable to jsigs `LinkedDataProof`, whose
+    // base `verifyProof` declares `proof: object`; `IProofDescription` (with its
+    // required index signature) is narrower than `object`, so a narrowed
+    // override would be rejected.
     proof: any
     proofSet?: any[]
     document: any
@@ -494,7 +503,7 @@ export class DataIntegrityProof extends LinkedDataProof {
     documentLoader
   }: {
     document: any
-    proof: any
+    proof: IProofDescription
     proofSet?: any[]
     documentLoader: IDocumentLoader
     verificationMethod?: IVerificationMethod
@@ -540,7 +549,7 @@ export class DataIntegrityProof extends LinkedDataProof {
     proof,
     documentLoader
   }: {
-    proof: any
+    proof: IProofDescription
     documentLoader: IDocumentLoader
   }): Promise<IVerificationMethod> {
     let verificationMethod = proof.verificationMethod
@@ -567,7 +576,7 @@ export class DataIntegrityProof extends LinkedDataProof {
   }
 
   async canonizeProof(
-    proof: any,
+    proof: IProofDescription,
     {
       documentLoader,
       document
@@ -599,7 +608,7 @@ export class DataIntegrityProof extends LinkedDataProof {
   async matchProof({
     proof
   }: {
-    proof: any
+    proof: IProofDescription
     document?: any
     purpose?: any
     documentLoader?: IDocumentLoader
