@@ -1,5 +1,12 @@
 # @interop/data-integrity-proof Changelog
 
+## 3.2.1 - 2026-06-02
+
+### Changed
+
+- Update to newest `@interop/jsonld-signatures`, add `.vscode/` config,
+  fix some test linting issues.
+
 ## 3.2.0 - 2026-06-01
 
 ### Added
