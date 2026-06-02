@@ -1,5 +1,15 @@
 # @interop/data-integrity-proof Changelog
 
+## 3.2.0 - TBD
+
+### Added
+- Export `SignatureSuiteClass`: the constructor contract for a concrete,
+  ready-to-instantiate Linked Data signature suite class (e.g.
+  `Ed25519Signature2020`), with optional static `CONTEXT` / `CONTEXT_URL`.
+  This is the suite-agnostic type consumers (such as `@interop/ezcap`) use to
+  accept a `SuiteClass`; it complements `Cryptosuite` (the *instance* config
+  passed into `DataIntegrityProof`).
+
 ## 3.1.0 - 2026-06-01
 
 ### Changed
