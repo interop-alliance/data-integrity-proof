@@ -1,6 +1,6 @@
 # @interop/data-integrity-proof Changelog
 
-## 3.2.0 - TBD
+## 3.2.0 - 2026-06-01
 
 ### Added
 - Export `SignatureSuiteClass`: the constructor contract for a concrete,
