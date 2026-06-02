@@ -17,7 +17,9 @@ export async function runRoundtrip(): Promise<{
   proofValue: string
   verified: boolean
 }> {
-  const keyPair = await Ed25519VerificationKey.from({ ...ed25519MultikeyKeyPair })
+  const keyPair = await Ed25519VerificationKey.from({
+    ...ed25519MultikeyKeyPair
+  })
   const suite = new DataIntegrityProof({
     signer: keyPair.signer(),
     date: '2022-09-06T21:29:24Z',
