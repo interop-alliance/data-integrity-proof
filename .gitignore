@@ -65,7 +65,9 @@ jspm_packages/
 # Editor files
 *~
 *.sw[nop]
-/.vscode
+/.vscode/*
+!/.vscode/extensions.json
+!/.vscode/settings.json
 
 # Output
 dist

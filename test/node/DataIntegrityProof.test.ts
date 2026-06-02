@@ -641,7 +641,7 @@ describe('DataIntegrityProof', () => {
         documentLoader
       })
 
-      const { error } = result.results[0]
+      const error = result.results[0]?.error
       expect(result.verified).toBe(false)
       expect(error?.name).toBe('TypeError')
       expect(error?.message).toBe(
@@ -663,7 +663,7 @@ describe('DataIntegrityProof', () => {
         documentLoader
       })
 
-      const { error } = result.results[0]
+      const error = result.results[0]?.error
 
       expect(result.verified).toBe(false)
       expect(error?.name).toBe('TypeError')

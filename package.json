@@ -8,11 +8,11 @@
     "clear": "rimraf dist/*",
     "dev": "vite",
     "fix": "eslint --fix src test && pnpm run format",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"*.md\"",
     "lint": "eslint src test",
     "prepare": "pnpm run build",
     "rebuild": "pnpm run clear && pnpm run build",
-    "test": "pnpm run lint && pnpm run test-node && pnpm run test-browser",
+    "test": "pnpm run fix && npm run lint && pnpm run test-node && pnpm run test-browser",
     "test-browser": "playwright test",
     "test-node": "vitest run",
     "test-coverage": "vitest run --coverage"
@@ -44,7 +44,7 @@
   "sideEffects": false,
   "dependencies": {
     "@interop/data-integrity-core": "^6.1.0",
-    "@interop/jsonld-signatures": "^11.6.2",
+    "@interop/jsonld-signatures": "^11.6.7",
     "@noble/hashes": "^2.2.0",
     "@scure/base": "^2.2.0"
   },
