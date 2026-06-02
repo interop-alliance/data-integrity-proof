@@ -8,3 +8,4 @@ export type {
   DataIntegrityProofOptions,
   VerifyProofResult
 } from './DataIntegrityProof.js'
+export type { SignatureSuiteClass } from './SuiteClass.js'
