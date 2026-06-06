@@ -1,6 +1,6 @@
 {
   "name": "@interop/data-integrity-proof",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "Data Integrity Proof library for use with jsonld-signatures.",
   "type": "module",
   "scripts": {
@@ -26,7 +26,8 @@
     ".": {
       "types": "./dist/index.d.ts",
       "react-native": "./dist/index.js",
-      "import": "./dist/index.js"
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     }
   },
   "module": "dist/index.js",

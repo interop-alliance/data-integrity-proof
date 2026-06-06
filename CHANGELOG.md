@@ -1,5 +1,11 @@
 # @interop/data-integrity-proof Changelog
 
+## 3.2.2 - 2026-06-06
+
+### Added
+
+- Add default export to `package.json`.
+
 ## 3.2.1 - 2026-06-02
 
 ### Changed
