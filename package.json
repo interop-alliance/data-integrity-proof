@@ -45,7 +45,7 @@
   "sideEffects": false,
   "dependencies": {
     "@interop/data-integrity-core": "^7.0.0",
-    "@interop/jsonld-signatures": "^11.6.7",
+    "@interop/jsonld-signatures": "^11.7.1",
     "@noble/hashes": "^2.2.0",
     "@scure/base": "^2.2.0"
   },
@@ -55,7 +55,7 @@
     "@eslint/js": "^10.0.1",
     "@interop/ed25519-signature": "^7.1.0",
     "@interop/ed25519-verification-key": "^8.0.0",
-    "@interop/security-document-loader": "^9.2.2",
+    "@interop/security-document-loader": "^9.2.3",
     "@playwright/test": "^1.60.0",
     "@types/node": "^25.9.1",
     "@vitest/coverage-v8": "^4.1.7",

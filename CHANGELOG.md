@@ -1,4 +1,11 @@
 # @interop/data-integrity-proof Changelog
+
+## 3.3.1 -
+
+### Changed
+
+- Update to latest `@interop/jsonld-signatures`.
+
 ## 3.3.0 - 2026-06-09
 
 ### Changed
