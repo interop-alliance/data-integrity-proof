@@ -1,5 +1,3 @@
 minimumReleaseAgeExclude:
-  - '@interop/security-document-loader@9.0.2'
-  - '@interop/ed25519-verification-key@7.0.0'
-  - '@interop/data-integrity-core@6.1.0'
-  - '@interop/jsonld-signatures@11.6.7'
+  - '@interop/data-integrity-core@7.0.0'
+  - '@interop/ed25519-verification-key@8.0.0'
