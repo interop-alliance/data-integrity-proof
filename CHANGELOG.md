@@ -1,5 +1,5 @@
 # @interop/data-integrity-proof Changelog
-## 3.3.0 -
+## 3.3.0 - 2026-06-09
 
 ### Changed
 
