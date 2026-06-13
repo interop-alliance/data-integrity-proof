@@ -1,5 +1,11 @@
 # @interop/data-integrity-proof Changelog
 
+## 3.4.0 -
+
+### Changed
+
+- Update to `@interop/data-integrity-core@8.0.0` and related.
+
 ## 3.3.1 - 2026-06-09
 
 ### Changed
