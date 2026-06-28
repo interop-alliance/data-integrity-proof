@@ -1,5 +1,12 @@
 # @interop/data-integrity-proof Changelog
 
+## 3.4.1 - 2026-06-28
+
+### Changed
+
+- Update to latest jsigs and `@interop/data-integrity-core@8.1.0` (json content
+  type detection fix).
+
 ## 3.4.0 - 2026-06-13
 
 ### Changed

@@ -1,6 +1,6 @@
 {
   "name": "@interop/data-integrity-proof",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "description": "Data Integrity Proof library for use with jsonld-signatures.",
   "type": "module",
   "scripts": {
@@ -44,8 +44,8 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "dependencies": {
-    "@interop/data-integrity-core": "^8.0.0",
-    "@interop/jsonld-signatures": "^11.8.1",
+    "@interop/data-integrity-core": "^8.1.0",
+    "@interop/jsonld-signatures": "^11.8.2",
     "@noble/hashes": "^2.2.0",
     "@scure/base": "^2.2.0"
   },
@@ -53,9 +53,9 @@
     "@digitalbazaar/data-integrity-context": "^2.0.1",
     "@digitalbazaar/multikey-context": "^2.0.1",
     "@eslint/js": "^10.0.1",
-    "@interop/ed25519-signature": "^7.1.1",
-    "@interop/ed25519-verification-key": "^8.0.0",
-    "@interop/security-document-loader": "^9.3.0",
+    "@interop/ed25519-signature": "^7.1.2",
+    "@interop/ed25519-verification-key": "^8.0.2",
+    "@interop/security-document-loader": "^9.4.0",
     "@playwright/test": "^1.60.0",
     "@types/node": "^25.9.1",
     "@vitest/coverage-v8": "^4.1.7",

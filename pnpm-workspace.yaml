@@ -1,1 +1,4 @@
 minimumReleaseAgeExclude:
+  - '@interop/http-client@1.0.4'
+  - '@interop/jsonld-signatures@11.8.2'
+  - '@interop/jsonld@9.0.3'
