@@ -1,6 +1,6 @@
 # @interop/data-integrity-proof Changelog
 
-## 3.4.3 - TBD
+## 3.4.3 - 2026-08-03
 
 ### Changed
 
