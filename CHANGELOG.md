@@ -1,5 +1,10 @@
 # @interop/data-integrity-proof Changelog
 
+## 3.4.8 - TBD
+
+### Changed
+- Update to latest `@interop/data-integrity-core@8.9.0` (verification method error).
+
 ## 3.4.7 - 2026-10-06
 
 ### Changed
